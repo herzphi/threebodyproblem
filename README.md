@@ -27,7 +27,7 @@ $$
 \begin{bmatrix}
     x \\\
     y \\\
-\end{bmatrix} = \left\{ 
+\end{bmatrix} = \left\lbrace
 \begin{bmatrix}
     0 \\\
     1 \\\
@@ -39,14 +39,14 @@ $$
 \begin{bmatrix}
     0.46 \\\
     0 \\\
-\end{bmatrix} \right\}
+\end{bmatrix} \right\rbrace
 $$
 
 $$
 \begin{bmatrix}
     v_x \\\
     v_y \\\
-\end{bmatrix} = \left\{
+\end{bmatrix} = \left\lbrace
 \begin{bmatrix}
     0 \\\
     -0.5 \\\
@@ -58,5 +58,5 @@ $$
 \begin{bmatrix}
     -1 \\\
     1 \\\
-\end{bmatrix}\right\}
+\end{bmatrix}\right\rbrace
 $$
