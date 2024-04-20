@@ -27,8 +27,7 @@ $$
 \begin{bmatrix}
     x \\\
     y \\\
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
     0 \\\
     1 \\\
@@ -36,8 +35,7 @@ $$
 \begin{bmatrix}
     -0.55 \\\
     0 \\\
-\end{bmatrix}
-,
+\end{bmatrix},
 \begin{bmatrix}
     0.46 \\\
     0 \\\
