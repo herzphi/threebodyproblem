@@ -1,7 +1,6 @@
 # Simulation of the three body problem
 
-![threebodyproblem](animation/animation_00.gif)
-
+<img src="animation/animation_00.gif" width="400">
 
 Using the equations $r_{ij}$ for the distances and $a_{direction, i}$ for acceleration.
 
