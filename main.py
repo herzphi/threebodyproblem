@@ -58,7 +58,7 @@ solution = solve_ivp(
 )
 
 # Plotting the animation
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(5, 5))
 (line,) = ax.plot([], [], "bo", markersize=5)
 lines_traj = [ax.plot([], [], lw=1)[0] for _ in range(3)]  # Trajectories of each body
 
@@ -90,5 +90,5 @@ ani = FuncAnimation(
     blit=True,
     interval=1,
 )
-# ani.save("./animation/animation_00.mp4")
-plt.show()
+ani.save("./animation/animation_00.gif")
+# plt.show()
