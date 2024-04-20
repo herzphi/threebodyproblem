@@ -85,4 +85,4 @@ def update(frame):
 ani = FuncAnimation(
     fig, update, frames=len(solution.t), init_func=init, blit=True, interval=1e-3
 )
-ani.save("./animation/animation_00.mp4", fps=30)
+ani.save("./animation/animation_00.mp4", writer="ffmpeg")
