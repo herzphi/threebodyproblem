@@ -23,52 +23,42 @@ with the inital conditions:
 
 $m_1=m_2=m_3=1$
 
-$
+$$
 \begin{bmatrix}
     x \\
     y \\
 \end{bmatrix}
-$ =
-$
+=
 \begin{bmatrix}
     0 \\
     1 \\
-\end{bmatrix}
-$, 
-$
+\end{bmatrix}, 
 \begin{bmatrix}
     -0.55 \\
     0 \\
 \end{bmatrix}
-$,
-$
+,
 \begin{bmatrix}
     0.46 \\
     0 \\
 \end{bmatrix}
-$
+$$
 
-$
+$$
 \begin{bmatrix}
     v_x \\
     v_y \\
-\end{bmatrix}
-$ =
-$
+\end{bmatrix} = 
 \begin{bmatrix}
     0 \\
     -0.5 \\
-\end{bmatrix}
-$, 
-$
+\end{bmatrix},
 \begin{bmatrix}
     1 \\
     1 \\
-\end{bmatrix}
-$,
-$
+\end{bmatrix}, 
 \begin{bmatrix}
     -1 \\
     1 \\
 \end{bmatrix}
-$
+$$
