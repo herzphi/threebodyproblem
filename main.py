@@ -25,28 +25,28 @@ def three_body_equations(t, y, m1, m2, m3):
 
 
 # Initial conditions
-m1 = 1.0  # Mass of the first body
+m1 = 10.0  # Mass of the first body
 m2 = 1.0  # Mass of the second body
 m3 = 1.0  # Mass of the third body
 initial_conditions = [
     0,
     1.0,
     0.0,
-    -0.5,
+    -0.6,
     -0.55,
     0,
-    1,
-    1,
-    0.46,
+    0.6,
+    0.6,
+    0.5,
     0.0,
-    -1,
-    1,
+    -0.6,
+    0.6,
 ]  # [x1, y1, vx1, vy1, x2, y2, vx2, vy2, x3, y3, vx3, vy3]
 
 # Time array
 t_span = (0, 20)  # Time span for the simulation
 t_eval = np.linspace(
-    t_span[0], t_span[1], int(1e5)
+    t_span[0], t_span[1], int(1e4)
 )  # Time points where the solution is computed
 
 # Solve the differential equations
@@ -83,6 +83,12 @@ def update(frame):
 
 
 ani = FuncAnimation(
-    fig, update, frames=len(solution.t), init_func=init, blit=True, interval=1e-3
+    fig,
+    update,
+    frames=len(solution.t),
+    init_func=init,
+    blit=True,
+    interval=1,
 )
-ani.save("./animation/animation_00.mp4", writer="ffmpeg")
+# ani.save("./animation/animation_00.mp4")
+plt.show()
