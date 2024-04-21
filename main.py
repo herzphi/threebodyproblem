@@ -24,27 +24,34 @@ def three_body_equations(t, y, m1, m2, m3):
     return [vx1, vy1, ax1, ay1, vx2, vy2, ax2, ay2, vx3, vy3, ax3, ay3]
 
 
-# Initial conditions
-m1 = 10.0  # Mass of the first body
-m2 = 1.0  # Mass of the second body
-m3 = 1.0  # Mass of the third body
+# Define initial conditions for Earth-Sun-Moon system
+# Units: distance in AU (astronomical units), velocity in AU/day
+# Sun-Earth distance: 1 AU
+# Moon-Earth distance: 0.00257 AU
+# Earth velocity around Sun: 2 * pi AU/year
+# Moon velocity around Earth: 2 * pi AU/month
+m1 = 1.0  # Mass of the Sun
+m2 = 3.0e-6  # Mass of the Earth
+m3 = 3.7e-8  # Mass of the Moon
+
+# Initial conditions for the Earth-Sun-Moon system
 initial_conditions = [
-    0,
     1.0,
     0.0,
-    -0.6,
-    -0.55,
-    0,
-    0.6,
-    0.6,
-    0.5,
     0.0,
-    -0.6,
-    0.6,
-]  # [x1, y1, vx1, vy1, x2, y2, vx2, vy2, x3, y3, vx3, vy3]
+    2 * np.pi,  # Initial conditions for Sun
+    1.0 + 0.00257,
+    0.0,
+    0.0,
+    2 * np.pi + 2 * np.pi / 12,  # Initial conditions for Earth
+    1.0 + 0.00257,
+    0.0,
+    0.0,
+    2 * np.pi + 2 * np.pi / 12 + 2 * np.pi / 365.25,  # Initial conditions for Moon
+]
 
 # Time array
-t_span = (0, 20)  # Time span for the simulation
+t_span = (0, 365.25)  # Time span for the simulation (1 year)
 t_eval = np.linspace(
     t_span[0], t_span[1], int(1e4)
 )  # Time points where the solution is computed
@@ -64,8 +71,9 @@ lines_traj = [ax.plot([], [], lw=1)[0] for _ in range(3)]  # Trajectories of eac
 
 
 def init():
-    ax.set_xlim(-2, 2)
-    ax.set_ylim(-2, 2)
+    axlim = 1100
+    ax.set_xlim(-axlim, axlim)
+    ax.set_ylim(-axlim, axlim)
     for traj in lines_traj:
         traj.set_data([], [])
     return [line] + lines_traj
@@ -90,5 +98,5 @@ ani = FuncAnimation(
     blit=True,
     interval=1,
 )
-ani.save("./animation/animation_00.gif")
-# plt.show()
+# ani.save("./animation/animation_00.gif")
+plt.show()
