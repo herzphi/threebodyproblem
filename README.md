@@ -26,7 +26,7 @@ $$
 \begin{bmatrix}
     x \\\
     y \\\
-\end{bmatrix} = \left\lbrace
+\end{bmatrix} \in \left\lbrace
 \begin{bmatrix}
     0 \\\
     1 \\\
@@ -45,7 +45,7 @@ $$
 \begin{bmatrix}
     v_x \\\
     v_y \\\
-\end{bmatrix} = \left\lbrace
+\end{bmatrix} \in \left\lbrace
 \begin{bmatrix}
     0 \\\
     -0.6 \\\

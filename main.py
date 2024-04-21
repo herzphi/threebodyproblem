@@ -30,24 +30,25 @@ def three_body_equations(t, y, m1, m2, m3):
 # Moon-Earth distance: 0.00257 AU
 # Earth velocity around Sun: 2 * pi AU/year
 # Moon velocity around Earth: 2 * pi AU/month
+# Define initial conditions for Earth-Sun-Moon system
 m1 = 1.0  # Mass of the Sun
 m2 = 3.0e-6  # Mass of the Earth
 m3 = 3.7e-8  # Mass of the Moon
 
 # Initial conditions for the Earth-Sun-Moon system
 initial_conditions = [
-    1.0,
     0.0,
     0.0,
-    2 * np.pi,  # Initial conditions for Sun
-    1.0 + 0.00257,
     0.0,
-    0.0,
-    2 * np.pi + 2 * np.pi / 12,  # Initial conditions for Earth
-    1.0 + 0.00257,
-    0.0,
-    0.0,
-    2 * np.pi + 2 * np.pi / 12 + 2 * np.pi / 365.25,  # Initial conditions for Moon
+    0.0,  # Initial conditions for Sun
+    -1.0,
+    0,
+    0,  # Initial conditions for Earth
+    0.01,
+    -1.00257,
+    0,
+    0,  # Initial conditions for Moon
+    0.01 + 0.001,
 ]
 
 # Time array
@@ -71,7 +72,7 @@ lines_traj = [ax.plot([], [], lw=1)[0] for _ in range(3)]  # Trajectories of eac
 
 
 def init():
-    axlim = 1100
+    axlim = 2
     ax.set_xlim(-axlim, axlim)
     ax.set_ylim(-axlim, axlim)
     for traj in lines_traj:
